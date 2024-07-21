@@ -150,6 +150,9 @@ module GTK
 
     # @return [Array<GTK::Controller>] array of connected Controllers
     attr_reader :controllers
+
+    # @return [GTK::Keyboard] keyboard
+    attr_reader :keyboard
   end
 
   class MousePoint
