@@ -130,34 +130,56 @@ module GTK
 
   class Mouse
 
+    # @return [true, false] Return’s true if the game has mouse focus.
     attr_reader :has_focus
 
+    # @return [Integer] Returns the current x location of the mouse.
     attr_reader :x
 
+    # @return [Integer] Returns the current y location of the mouse.
     attr_reader :y
 
+    # @return [Integer] Returns the x location of the mouse on the previous frame.
     attr_reader :previous_x
 
+    # @return [Integer] Returns the y location of the mouse on the previous frame.
     attr_reader :previous_y
 
+    # @return [Integer] Returns the difference between the current x location of the mouse and its previous x location.
     attr_reader :relative_x
 
+    # @return [Integer] Returns the difference between the current y location of the mouse and its previous y location.
     attr_reader :relative_y
 
+    # Check if the mouse is inside a rect
+    #
+    # @param rect [Object] a primitive that responds to x, y, w, h
+    # @return [true, false] Returns true if the mouse is inside the specified rect
     def inside_rect? rect; end
 
+    # Check if the mouse is inside a circle
+    #
+    # @param center_point [Object] any primitive that responds to x, y
+    # @param radius [Float] radius of circle
+    # @return [true, false] Returns true if the mouse is inside of a specified circle.
     def inside_circle? center_point, radius; end
 
+    # @return [true, false] Returns true if the mouse has moved on the current frame.
     attr_reader :moved
 
+    # @return [true, false] Returns true if the left mouse button is down.
     attr_reader :button_left
 
+    # @return [true, false] Returns true if the middle mouse button is down.
     attr_reader :button_middle
 
+    # @return [true, false] Returns true if the right mouse button is down.
     attr_reader :button_right
 
+    # @return [Integer] Returns a bitmask for all buttons on the mouse: 1 for a button in the down state, 0 for a button in the up state.
     attr_reader :button_bits
 
+    # @return [Hash, nil]  Returns nil if no mouse wheel actions occurred. Otherwise returns a Hash with x and y (representing movement on each axis).
     attr_reader :wheel
 
     def click; end
