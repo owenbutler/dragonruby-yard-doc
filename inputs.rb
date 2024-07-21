@@ -136,16 +136,16 @@ module GTK
     # @return [Hash] Returns a Hash with x and y denoting a touch point that is on the right side of the screen.
     attr_reader :finger_right
 
-    # @return [GTK::Controller]
+    # @return [GTK::Controller] controller one
     attr_reader :controller_one
 
-    # @return [GTK::Controller]
+    # @return [GTK::Controller] controller two
     attr_reader :controller_two
 
-    # @return [GTK::Controller]
+    # @return [GTK::Controller] controller three
     attr_reader :controller_three
 
-    # @return [GTK::Controller]
+    # @return [GTK::Controller] controller four
     attr_reader :controller_four
 
     # @return [Array<GTK::Controller>] array of connected Controllers
