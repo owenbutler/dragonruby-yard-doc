@@ -129,26 +129,54 @@ module GTK
   end
 
   class MousePoint
+    # @return [Integer] x position of click.
+    attr_reader :x
 
-    attr_reader x
+    # @return [Integer] y position of click.
+    attr_reader :y
 
-    attr_reader y
+    # @return [Hash] hash containing the x, y position of the click, and a w, h that are always 0.
+    attr_reader :point
 
-    attr_reader point
+    # @return [Integer] the tick_count this click occurred at.
+    attr_reader :created_at
 
-    attr_reader created_at
+    # @return [Integer] the global_tick_count this click occurred at.
+    attr_reader :global_created_at
 
-    attr_reader global_created_at
-
+    # @return [Integer] Returns the number of ticks between current time and when this click occurred.
     def created_at_elapsed; end
 
+    # @return [Integer] always returns 0
     def w; end
+
+    # @return [Integer] always returns 0
     def h; end
+
+    # @return [Integer] returns the x coordinate of the click
     def left; end
+
+    # @return [Integer] returns the x coordinate of the click
     def right; end
+
+    # @return [Integer] returns the y coordinate of the click
     def top; end
+
+    # @return [Integer] returns the y coordinate of the click
     def bottom; end
 
+    # Check if the click is inside a rect
+    #
+    # @param rect [Object] a primitive that responds to x, y, w, h
+    # @return [true, false] Returns true if the click is inside the specified rect
+    def inside_rect? rect; end
+
+    # Check if the click is inside a circle
+    #
+    # @param center_point [Object] any primitive that responds to x, y
+    # @param radius [Float] radius of circle
+    # @return [true, false] Returns true if the click is inside of a specified circle.
+    def inside_circle? center_point, radius; end
   end
 
   class Mouse
@@ -204,12 +232,32 @@ module GTK
     # @return [Hash, nil]  Returns nil if no mouse wheel actions occurred. Otherwise returns a Hash with x and y (representing movement on each axis).
     attr_reader :wheel
 
+    # Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?. 
+    #
+    # To scope to a specific button use .button_left, .button_middle, .button_right, or .button_bits.
+    #
+    # @return [GTK::MousePoint, nil] Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?.
     def click; end
 
+    # Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?. 
+    #
+    # To scope to a specific button use .button_left, .button_middle, .button_right, or .button_bits.
+    #
+    # @return [GTK::MousePoint, nil] Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?.
     def down; end
 
+    # Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?. 
+    #
+    # To scope to a specific button use .button_left, .button_middle, .button_right, or .button_bits.
+    #
+    # @return [GTK::MousePoint, nil] Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?.
     def previous_click; end
 
+    # Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?. 
+    #
+    # To scope to a specific button use .button_left, .button_middle, .button_right, or .button_bits.
+    #
+    # @return [GTK::MousePoint, nil] Returns nil if the button event didn't occur this frame, else returns a MousePoint, which includes x, y properties along with helper functions to determine collision: inside_rect?, inside_circle?.
     def up; end
   end
 end
