@@ -128,8 +128,30 @@ module GTK
     attr_reader :mouse
   end
 
-  class Mouse
+  class MousePoint
 
+    attr_reader x
+
+    attr_reader y
+
+    attr_reader point
+
+    attr_reader created_at
+
+    attr_reader global_created_at
+
+    def created_at_elapsed; end
+
+    def w; end
+    def h; end
+    def left; end
+    def right; end
+    def top; end
+    def bottom; end
+
+  end
+
+  class Mouse
     # @return [true, false] Return’s true if the game has mouse focus.
     attr_reader :has_focus
 
