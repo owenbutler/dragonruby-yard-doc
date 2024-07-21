@@ -35,20 +35,16 @@ module GTK
     attr_reader :locale
 
     # @return [true, nil] Returns true if: the up arrow or w key is pressed or held on the keyboard; or if up is pressed or held on controller_one; or if the left_analog on controller_one is tilted upwards.
-    def up
-    end
+    def up; end
 
     # @return [true, nil] Returns true if: the down arrow or s key is pressed or held on the keyboard; or if down is pressed or held on controller_one; or if the left_analog on controller_one is tilted downwards.
-    def down
-    end
+    def down; end
 
     # @return [true, nil] Returns true if: the left arrow or a key is pressed or held on the keyboard; or if left is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the left.
-    def left
-    end
+    def left; end
 
     # @return [true, nil] Returns true if: the right arrow or d key is pressed or held on the keyboard; or if right is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the right.
-    def right
-    end
+    def right; end
 
     # This method is aliased to +args.inputs.left_right_with_wasd+.
     #
@@ -60,8 +56,7 @@ module GTK
     # * Controller One's Left Analog (if a controller is connected): args.inputs.controller_one.left_analog_x_perc.abs >= 0.6
     #
     # @return [Integer] Returns -1 (left), 0 (neutral), or +1 (right).
-    def left_right
-    end
+    def left_right; end
 
     # This method is aliased to args.inputs.left_right_perc_with_wasd
     #
@@ -73,8 +68,7 @@ module GTK
     # * Keyboard’s left/right arrow keys: args.inputs.keyboard.(left\|right)_arrow
     #
     # @return [Float] Returns a floating point value between -1 and 1
-    def left_right_perc
-    end
+    def left_right_perc; end
 
     # This method is aliased to args.inputs.left_right_arrow.
     #
@@ -86,8 +80,7 @@ module GTK
     # WASD and Controller One’s Left Analog Stick are NOT consulted.
     #
     # @ return [Integer] Returns -1 (left), 0 (neutral), or +1 (right).
-    def left_right_directional
-    end
+    def left_right_directional; end
 
     # The following inputs are inspected to dermine the result:
     #
@@ -98,8 +91,7 @@ module GTK
     # WASD is NOT consulted.
     #
     # @ return [Float] Returns a floating point value between -1 and 1.
-    def left_right_directional_perc
-    end
+    def left_right_directional_perc; end
 
     # This method is aliased to args.inputs.up_down_with_wasd.
     #
@@ -111,8 +103,7 @@ module GTK
     # * Controller One’s Up Analog (if a controller is connected): args.inputs.controller_one.up_analog_y_perc.abs >= 0.6
     #
     # @return [Integer] Returns -1 (down), 0 (neutral), or +1 (up).
-    def up_down
-    end
+    def up_down; end
 
     # This method is aliased to args.inputs.up_down_arrow.
     #
@@ -124,8 +115,7 @@ module GTK
     # WASD and Controller One’s Left Analog Stick are NOT consulted.
     #
     # @return [Integer] Returns -1 (down), 0 (neutral), or +1 (up).
-    def up_down_directional
-    end
+    def up_down_directional; end
 
     # The following inputs are inspected to dermine the result:
     #
@@ -134,12 +124,10 @@ module GTK
     # * Keyboard’s up/down arrow keys: args.inputs.keyboard.(up\|down)_arrow
     #
     # @return [Float] Returns a floating point value between -1 and 1.
-    def up_down_perc
-    end
+    def up_down_perc; end
 
     # @return [String] Returns a string that represents the last key that was pressed on the keyboard.
-    def text
-    end
+    def text; end
   end
 end
 
