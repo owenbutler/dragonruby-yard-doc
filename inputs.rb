@@ -129,5 +129,43 @@ module GTK
   end
 
   class Mouse
+
+    attr_reader :has_focus
+
+    attr_reader :x
+
+    attr_reader :y
+
+    attr_reader :previous_x
+
+    attr_reader :previous_y
+
+    attr_reader :relative_x
+
+    attr_reader :relative_y
+
+    def inside_rect? rect; end
+
+    def inside_circle? center_point, radius; end
+
+    attr_reader :moved
+
+    attr_reader :button_left
+
+    attr_reader :button_middle
+
+    attr_reader :button_right
+
+    attr_reader :button_bits
+
+    attr_reader :wheel
+
+    def click; end
+
+    def down; end
+
+    def previous_click; end
+
+    def up; end
   end
 end
