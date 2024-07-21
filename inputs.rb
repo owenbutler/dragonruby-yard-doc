@@ -123,5 +123,11 @@ module GTK
 
     # @return [String] Returns a string that represents the last key that was pressed on the keyboard.
     def text; end
+
+    # @return [GTK::Mouse]
+    attr_reader :mouse
+  end
+
+  class Mouse
   end
 end
