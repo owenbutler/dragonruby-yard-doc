@@ -126,6 +126,30 @@ module GTK
 
     # @return [GTK::Mouse]
     attr_reader :mouse
+
+    # @return [Hash] Returns a Hash representing all touch points on a touch device.
+    attr_reader :touch
+
+    # @return [Hash] Returns a Hash with x and y denoting a touch point that is on the left side of the screen.
+    attr_reader :finger_left
+
+    # @return [Hash] Returns a Hash with x and y denoting a touch point that is on the right side of the screen.
+    attr_reader :finger_right
+
+    # @return [GTK::Controller]
+    attr_reader :controller_one
+
+    # @return [GTK::Controller]
+    attr_reader :controller_two
+
+    # @return [GTK::Controller]
+    attr_reader :controller_three
+
+    # @return [GTK::Controller]
+    attr_reader :controller_four
+
+    # @return [Array<GTK::Controller>] array of connected Controllers
+    attr_reader :controllers
   end
 
   class MousePoint
