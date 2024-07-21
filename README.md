@@ -18,3 +18,9 @@ include:
 - "mygame/app/*.rb"
 - "../dragonruby-yard-doc/*.rb"
 ```
+
+## Examples
+
+### vim/neovim
+
+### VSCode
