@@ -1,3 +1,5 @@
+# Dragonruby YARD Doc
+
 This repository contains YARD documentation for the main Dragonruby APIs.
 
 This will be helpful for you if you:
@@ -16,4 +18,3 @@ include:
 - "mygame/app/*.rb"
 - "../dragonruby-yard-doc/*.rb"
 ```
-
