@@ -32,8 +32,7 @@ module GTK
     attr_reader :key_up
 
     # @return [Hash] Returns a Hash with all keys on the keyboard in their respective state.
-    #   The Hash contains the following keys
-    #   :down, :held, :down_or_held, :up
+    #   The Hash contains the following keys: :down, :held, :down_or_held, :up
     attr_reader :keys
   end
 end
