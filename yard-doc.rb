@@ -1,7 +1,7 @@
 module GTK
   class Args
     # @return [GTK::Inputs]
-    attr_accessor :inputs
+    attr_reader :inputs
   end
 
   class Inputs
@@ -130,9 +130,3 @@ module GTK
     def text; end
   end
 end
-
-# @type [GTK::Args]
-$args = Args.new
-
-# @type [GTK::Inputs]
-$inputs = Inputs.new
