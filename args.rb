@@ -26,5 +26,8 @@ module GTK
     #
     # @return [Hash]
     attr_reader :audio
+
+    # @return [GTK::Easing]
+    attr_reader :easing
   end
 end
