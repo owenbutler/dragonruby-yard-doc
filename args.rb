@@ -3,6 +3,9 @@ module GTK
     # @return [GTK::Inputs]
     attr_reader :inputs
 
+    # @return [GTK::Outputs]
+    attr_reader :outputs
+
     # Hash that contains audio sources that are playing.
     #
     # Sounds that don’t specify looping: true will be removed automatically from the hash after the playback ends. Looping sounds or sounds that should stop early must be removed manually.
