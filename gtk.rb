@@ -1,6 +1,9 @@
 module GTK
   class Gtk
 
+    # @return [GTK::Args] args
+    attr_reader :args
+
     def get_pixels file_path; end
 
     def dlopen file_path; end
