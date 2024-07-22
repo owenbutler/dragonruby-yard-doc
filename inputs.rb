@@ -29,16 +29,16 @@ module GTK
     # @see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes Wikipedia list of ISO 639-1 codes
     attr_reader :locale
 
-    # @return [true, nil] Returns true if: the up arrow or w key is pressed or held on the keyboard; or if up is pressed or held on controller_one; or if the left_analog on controller_one is tilted upwards.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the up arrow or w key is pressed or held on the keyboard; or if up is pressed or held on controller_one; or if the left_analog on controller_one is tilted upwards.
     def up; end
 
-    # @return [true, nil] Returns true if: the down arrow or s key is pressed or held on the keyboard; or if down is pressed or held on controller_one; or if the left_analog on controller_one is tilted downwards.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the down arrow or s key is pressed or held on the keyboard; or if down is pressed or held on controller_one; or if the left_analog on controller_one is tilted downwards.
     def down; end
 
-    # @return [true, nil] Returns true if: the left arrow or a key is pressed or held on the keyboard; or if left is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the left.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the left arrow or a key is pressed or held on the keyboard; or if left is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the left.
     def left; end
 
-    # @return [true, nil] Returns true if: the right arrow or d key is pressed or held on the keyboard; or if right is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the right.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the right arrow or d key is pressed or held on the keyboard; or if right is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the right.
     def right; end
 
     # This method is aliased to +args.inputs.left_right_with_wasd+.
