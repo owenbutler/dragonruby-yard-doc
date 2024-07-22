@@ -23,4 +23,9 @@ include:
 
 ### vim/neovim
 
+https://github.com/user-attachments/assets/9ae34338-f102-4971-acea-d50655366569
+
 ### VSCode
+
+https://github.com/user-attachments/assets/537ab517-1ee8-42dc-aeda-3d2e8cdda61e
+
