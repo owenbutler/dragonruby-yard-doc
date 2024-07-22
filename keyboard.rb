@@ -4,7 +4,7 @@ module GTK
     # @return [Integer] Returns Kernel.tick_count if any keys on the keyboard were pressed.
     attr_reader :active
 
-    # @return [true,false] Returns true if the game has keyboard focus.
+    # @return [Boolean] Returns true if the game has keyboard focus.
     attr_reader :has_focus
 
     # @return [Integer, false] Returns the tickstamp of the keypress if up or w is pressed or held on the keyboard.

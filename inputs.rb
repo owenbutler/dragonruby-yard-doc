@@ -195,19 +195,19 @@ module GTK
     # Check if the click is inside a rect
     #
     # @param rect [Object] a primitive that responds to x, y, w, h
-    # @return [true, false] Returns true if the click is inside the specified rect
+    # @return [Boolean] Returns true if the click is inside the specified rect
     def inside_rect? rect; end
 
     # Check if the click is inside a circle
     #
     # @param center_point [Object] any primitive that responds to x, y
     # @param radius [Float] radius of circle
-    # @return [true, false] Returns true if the click is inside of a specified circle.
+    # @return [Boolean] Returns true if the click is inside of a specified circle.
     def inside_circle? center_point, radius; end
   end
 
   class Mouse
-    # @return [true, false] Return’s true if the game has mouse focus.
+    # @return [Boolean] Return’s true if the game has mouse focus.
     attr_reader :has_focus
 
     # @return [Integer] Returns the current x location of the mouse.
@@ -231,26 +231,26 @@ module GTK
     # Check if the mouse is inside a rect
     #
     # @param rect [Object] a primitive that responds to x, y, w, h
-    # @return [true, false] Returns true if the mouse is inside the specified rect
+    # @return [Boolean] Returns true if the mouse is inside the specified rect
     def inside_rect? rect; end
 
     # Check if the mouse is inside a circle
     #
     # @param center_point [Object] any primitive that responds to x, y
     # @param radius [Float] radius of circle
-    # @return [true, false] Returns true if the mouse is inside of a specified circle.
+    # @return [Boolean] Returns true if the mouse is inside of a specified circle.
     def inside_circle? center_point, radius; end
 
-    # @return [true, false] Returns true if the mouse has moved on the current frame.
+    # @return [Boolean] Returns true if the mouse has moved on the current frame.
     attr_reader :moved
 
-    # @return [true, false] Returns true if the left mouse button is down.
+    # @return [Boolean] Returns true if the left mouse button is down.
     attr_reader :button_left
 
-    # @return [true, false] Returns true if the middle mouse button is down.
+    # @return [Boolean] Returns true if the middle mouse button is down.
     attr_reader :button_middle
 
-    # @return [true, false] Returns true if the right mouse button is down.
+    # @return [Boolean] Returns true if the right mouse button is down.
     attr_reader :button_right
 
     # @return [Integer] Returns a bitmask for all buttons on the mouse: 1 for a button in the down state, 0 for a button in the up state.
