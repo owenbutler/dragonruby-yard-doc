@@ -29,5 +29,8 @@ module GTK
 
     # @return [GTK::Easing]
     attr_reader :easing
+
+    # @return [GTK::Layout]
+    attr_reader :layout
   end
 end
