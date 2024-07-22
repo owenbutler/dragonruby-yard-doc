@@ -29,16 +29,16 @@ module GTK
     # @see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes Wikipedia list of ISO 639-1 codes
     attr_reader :locale
 
-    # @return [true, nil] Returns true if: the up arrow or w key is pressed or held on the keyboard; or if up is pressed or held on controller_one; or if the left_analog on controller_one is tilted upwards.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the up arrow or w key is pressed or held on the keyboard; or if up is pressed or held on controller_one; or if the left_analog on controller_one is tilted upwards.
     def up; end
 
-    # @return [true, nil] Returns true if: the down arrow or s key is pressed or held on the keyboard; or if down is pressed or held on controller_one; or if the left_analog on controller_one is tilted downwards.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the down arrow or s key is pressed or held on the keyboard; or if down is pressed or held on controller_one; or if the left_analog on controller_one is tilted downwards.
     def down; end
 
-    # @return [true, nil] Returns true if: the left arrow or a key is pressed or held on the keyboard; or if left is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the left.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the left arrow or a key is pressed or held on the keyboard; or if left is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the left.
     def left; end
 
-    # @return [true, nil] Returns true if: the right arrow or d key is pressed or held on the keyboard; or if right is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the right.
+    # @return [Integer, nil] Returns the tickstamp of the keypress if: the right arrow or d key is pressed or held on the keyboard; or if right is pressed or held on controller_one; or if the left_analog on controller_one is tilted to the right.
     def right; end
 
     # This method is aliased to +args.inputs.left_right_with_wasd+.
@@ -195,19 +195,19 @@ module GTK
     # Check if the click is inside a rect
     #
     # @param rect [Object] a primitive that responds to x, y, w, h
-    # @return [true, false] Returns true if the click is inside the specified rect
+    # @return [Boolean] Returns true if the click is inside the specified rect
     def inside_rect? rect; end
 
     # Check if the click is inside a circle
     #
     # @param center_point [Object] any primitive that responds to x, y
     # @param radius [Float] radius of circle
-    # @return [true, false] Returns true if the click is inside of a specified circle.
+    # @return [Boolean] Returns true if the click is inside of a specified circle.
     def inside_circle? center_point, radius; end
   end
 
   class Mouse
-    # @return [true, false] Return’s true if the game has mouse focus.
+    # @return [Boolean] Return’s true if the game has mouse focus.
     attr_reader :has_focus
 
     # @return [Integer] Returns the current x location of the mouse.
@@ -231,26 +231,26 @@ module GTK
     # Check if the mouse is inside a rect
     #
     # @param rect [Object] a primitive that responds to x, y, w, h
-    # @return [true, false] Returns true if the mouse is inside the specified rect
+    # @return [Boolean] Returns true if the mouse is inside the specified rect
     def inside_rect? rect; end
 
     # Check if the mouse is inside a circle
     #
     # @param center_point [Object] any primitive that responds to x, y
     # @param radius [Float] radius of circle
-    # @return [true, false] Returns true if the mouse is inside of a specified circle.
+    # @return [Boolean] Returns true if the mouse is inside of a specified circle.
     def inside_circle? center_point, radius; end
 
-    # @return [true, false] Returns true if the mouse has moved on the current frame.
+    # @return [Boolean] Returns true if the mouse has moved on the current frame.
     attr_reader :moved
 
-    # @return [true, false] Returns true if the left mouse button is down.
+    # @return [Boolean] Returns true if the left mouse button is down.
     attr_reader :button_left
 
-    # @return [true, false] Returns true if the middle mouse button is down.
+    # @return [Boolean] Returns true if the middle mouse button is down.
     attr_reader :button_middle
 
-    # @return [true, false] Returns true if the right mouse button is down.
+    # @return [Boolean] Returns true if the right mouse button is down.
     attr_reader :button_right
 
     # @return [Integer] Returns a bitmask for all buttons on the mouse: 1 for a button in the down state, 0 for a button in the up state.

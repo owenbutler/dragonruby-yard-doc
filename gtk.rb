@@ -13,10 +13,10 @@ module GTK
 
     def dlopen file_path; end
 
-    # @return [true,false] Returns true if the window is currently in fullscreen mode.
+    # @return [Boolean] Returns true if the window is currently in fullscreen mode.
     def window_fullscreen?; end
 
-    # @return [true,false] Returns true if the window can be resized on the platform the game is running on. This is useful for conditionally showing a “Toggle Fullscreen” option in your game.
+    # @return [Boolean] Returns true if the window can be resized on the platform the game is running on. This is useful for conditionally showing a “Toggle Fullscreen” option in your game.
     def can_resize_window?; end
 
     # Set the fullscreen state of the game.
@@ -38,7 +38,7 @@ module GTK
     # @param title [String] the title of the game in the Menu Bar.
     def set_window_title title; end
 
-    # @return [true,false] Returns true if quitting is allowed on the platform you are releasing to (eg: iOS and Web games do not allow exiting).
+    # @return [Boolean] Returns true if quitting is allowed on the platform you are releasing to (eg: iOS and Web games do not allow exiting).
     def can_close_window?; end
 
     # If you have multiple monitors, this function can be used to move the game to the next monitor. The function will cycle back to the first monitor if needed.
@@ -47,7 +47,7 @@ module GTK
     # If #can_resize_window? returns true, this functions will maximize the game window.
     def maximize_window; end
 
-    # @return [true,false] Returns true if the game’s orientation can be altered while the game is running.
+    # @return [Boolean] Returns true if the game’s orientation can be altered while the game is running.
     def can_change_orientation?; end
 
     # If #can_change_orientation? returns true, the orientation of the game will be changed from landscape to portrait (or portrait to landscape) while the game is running.
@@ -80,7 +80,7 @@ module GTK
     #   You will be given one additional tick if you need to perform any housekeeping before that game closes.
     def request_quit; end
 
-    # @return [true,false] will return true if the game is about to exit (either from the user closing the game or if request_quit was invoked).
+    # @return [Boolean] will return true if the game is about to exit (either from the user closing the game or if request_quit was invoked).
     def quit_requested?; end
 
     # You can ask DragonRuby which platform your game is currently being run on.
@@ -94,7 +94,7 @@ module GTK
     # Returns true if the game is being run in a released/shipped state.
     #    If you want to simulate a production build. Add an empty file called dragonruby_production_build inside of the metadata folder.
     #
-    # @return [true,false] Returns true if the game is being run in a released/shipped state.
+    # @return [Boolean] Returns true if the game is being run in a released/shipped state.
     def production?; end
 
     # @return [Hash]
@@ -121,7 +121,7 @@ module GTK
     # Hides the mouse cursor.
     def hide_cursor; end
 
-    # @return [true,false] Returns true if the mouse cursor is visible.
+    # @return [Boolean] Returns true if the mouse cursor is visible.
     def cursor_shown?; end
 
     # @param mode [Integer] 0: Ungrabs the mouse, 1: Grabs the mouse, 2: Hides the cursor, grabs the mouse and puts it in relative position mode accessible via args.inputs.mouse.relative_x or y.
@@ -251,7 +251,7 @@ module GTK
     # @return [String] Returns a string representing the version of DragonRuby you are running.
     def version; end
 
-    # @return [true,false] Returns true if the version of DragonRuby is NOT Standard Edition.
+    # @return [Boolean] Returns true if the version of DragonRuby is NOT Standard Edition.
     def version_pro?; end
 
     # @return [String] Returns a version string within mygame/game_metadata.txt.
