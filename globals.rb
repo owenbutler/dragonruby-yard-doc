@@ -6,3 +6,6 @@ $inputs = Inputs.new
 
 # @type [GTK::Gtk]
 $gtk = Gtk.new
+
+# @type [GTK::Geometry]
+$geometry = Geometry.new
