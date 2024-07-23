@@ -4,6 +4,9 @@ $args = Args.new
 # @type [GTK::Inputs]
 $inputs = Inputs.new
 
+# @type [GTK::Outputs]
+$outputs = Outputs.new
+
 # @type [GTK::Gtk]
 $gtk = Gtk.new
 
