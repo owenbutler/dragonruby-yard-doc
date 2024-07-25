@@ -35,5 +35,8 @@ module GTK
 
     # @return [GTK::Layout]
     attr_reader :layout
+
+    # @return [GTK::Geometry]
+    attr_reader :geometry
   end
 end
