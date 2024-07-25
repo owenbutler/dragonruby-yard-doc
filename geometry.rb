@@ -33,18 +33,18 @@ module GTK
     # @return [Hash] a new rectangle with a scaled size.
     def scale_rect_extended opts; end
 
-    # @param start_point [Object] start point
-    # @param end_point [Object] end point
+    # @param start_point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
+    # @param end_point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
     # @return [Float] Returns an angle in degrees from the start_point to the end_point (if you want the value in radians call .to_radians on the value returned).
     def angle start_point, end_point; end
 
-    # @param start_point [Object] start point
-    # @param end_point [Object] end point
+    # @param start_point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
+    # @param end_point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
     # @return [Float] Returns an angle in degrees from the end_point to the start_point (if you want the value in radians call .to_radians on the value returned).
     def angle_from start_point, end_point; end
 
-    # @param start_point [Object] start point
-    # @param end_point [Object] end point
+    # @param start_point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
+    # @param end_point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
     # @return [Float] Returns an angle in degrees to the end_point from the start_point (if you want the value in radians, you can call .to_radians on the value returned):
     def angle_to start_point, end_point; end
 
@@ -81,8 +81,8 @@ module GTK
 
     # Returns the distance between two points
     #
-    # @param p1 [Object] point 1
-    # @param p2 [Object] point 2
+    # @param p1 [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
+    # @param p2 [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
     # @return [Float] Returns the distance between p1 and p2
     def distance p1, p2; end
 
@@ -102,14 +102,14 @@ module GTK
 
     # Given a point and a line, ray_test returns one of the following symbols based on the location of the point relative to the line: :left, :right, :on
     #
-    # @param point [Object]
-    # @param line [Object]
+    # @param point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
+    # @param line [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2). 
     # @return [Symbol] returns one of the following symbols based on the location of the point relative to the line: :left, :right, :on
     def ray_test point, line; end
 
     # Given a line, this function returns a Hash with x and y keys representing a normalized representation of the rise and run of the line.
     #
-    # @param line [Object]
+    # @param line [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2). 
     # @return [Hash] returns a Hash with x and y keys representing a normalized representation of the rise and run of the line.
     def line_rise_run line; end
 
@@ -119,8 +119,8 @@ module GTK
     #
     # If you want the lines to be treated as infinite lines, use #ray_intersect.
     #
-    # @param line_1 [Object]
-    # @param line_2 [Object]
+    # @param line_1 [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2). 
+    # @param line_2 [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2). 
     # @rerturn [Hash,nil] returns point of intersection if the line segments intersect, nil if not
     def line_intersect line_1, line_2; end
 
@@ -130,8 +130,8 @@ module GTK
     #
     # If you do not want the lines to be treated as infinite lines, use line_intersect.
     #
-    # @param line_1 [Object]
-    # @param line_2 [Object]
+    # @param line_1 [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2).  
+    # @param line_2 [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2).  
     # @rerturn [Hash,nil] returns point of intersection if the ray(infinite line) intersect, nil if not
     def ray_intersect line_1, line_2; end
 
@@ -139,7 +139,7 @@ module GTK
     #
     # An optional third argument can be provided to rotate the angle around a point other than the origin.
     #
-    # @param point [Object]
+    # @param point [Object] a point (a Hash with x and y keys, or an Object that responds to x and y).
     # @param angle [Numeric]
     # @return [Hash] a new point is returned that is rotated around the origin by the degrees amount.
     def rotate_point point, angle; end
@@ -185,21 +185,21 @@ module GTK
     # @return [Array] returns an array of Rects from the quad_tree that intersect with the the first parameter.
     def find_all_intersect_rect_quad_tree needle, quad_tree; end
 
-    # @param line [Object]
+    # @param line [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2). 
     # @return [Numeric] Given a line, this function will return the angle of the line in degrees.
     def line_angle line; end
 
     # Given two Hashes with x and y keys (or Objects that respond to x and y), this function will return the dot product of the two vectors.
     #
-    # @param vec_1 [Object]
-    # @param vec_2 [Object]
+    # @param vec_1 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
+    # @param vec_2 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
     # @return [Numeric] return the dot product of the two vectors.
     def vec2_dot_product vec_1, vec_2; end
 
     # Given a Hash with x and y keys (or an Object that responds to x and y), this function will return a Hash with x and y keys that represents the vector normalized.
     #
-    # @param vec_1 [Object]
-    # @param vec_2 [Object]
+    # @param vec_1 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
+    # @param vec_2 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
     # @return [Hash] return a Hash with x and y keys that represents the vector normalized.
     def vec2_normalize vec2; end
 
@@ -224,13 +224,13 @@ module GTK
 
     # Given a line, this function will return a Hash with x and y keys that represents the vector of the line.
     #
-    # @param line [Object]
+    # @param line [Object] a line (a Hash with x, y, x2, and y2 keys, or an Object that responds to x, y, x2, and y2). 
     # @return [Hash] a Hash with x and y keys that represents the vector of the line.
     def line_vec2 line; end
 
     # Given a Hash with x and y keys (or an Object that responds to x and y), this function will return the magnitude of the vector.
     #
-    # @param vec2 [Object]
+    # @param vec2 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
     # @return [Numeric] the magnitude of the vector.
     def vec2_magnitude vec2; end
 
@@ -238,14 +238,14 @@ module GTK
     #
     # This is useful when you only want to compare distances, and don’t need the actual distance.
     #
-    # @param vec_1 [Object]
-    # @param vec_2 [Object]
+    # @param vec_1 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
+    # @param vec_2 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
     # @return [Numeric] the distance squared between the two points
     def distance_squared vec_1, vec_2; end
 
     # Given a Hash with x and y keys (or an Object that responds to x and y), this function will return a Hash with x and y keys that represents the normal of the vector.
     #
-    # @param vec2 [Object]
+    # @param vec2 [Object] a Hash with x and y keys (or an Object that responds to x and y). 
     # @return [Hash] a Hash with x and y keys that represents the normal of the vector.
     def vec2_normal vec2; end
 
