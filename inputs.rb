@@ -156,13 +156,9 @@ module GTK
   end
 
   class MousePoint
-    # @return [Integer] x position of click.
-    attr_reader :x
-
-    # @return [Integer] y position of click.
-    attr_reader :y
-
-    # @return [Hash] hash containing the x, y position of the click, and a w, h that are always 0.
+    include Typing::Point
+    
+    # @return [Typing::Rect] hash containing the x, y position of the click, and a w, h that are always 0.
     attr_reader :point
 
     # @return [Integer] the tick_count this click occurred at.
@@ -230,13 +226,13 @@ module GTK
 
     # Check if the mouse is inside a rect
     #
-    # @param rect [Object] a primitive that responds to x, y, w, h
+    # @param rect [Typing::Rect] a primitive that responds to x, y, w, h
     # @return [Boolean] Returns true if the mouse is inside the specified rect
     def inside_rect? rect; end
 
     # Check if the mouse is inside a circle
     #
-    # @param center_point [Object] any primitive that responds to x, y
+    # @param center_point [Typing::Point] any primitive that responds to x, y
     # @param radius [Float] radius of circle
     # @return [Boolean] Returns true if the mouse is inside of a specified circle.
     def inside_circle? center_point, radius; end

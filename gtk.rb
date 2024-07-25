@@ -8,7 +8,7 @@ module GTK
     #   The pixels key contains an array of hexadecimal values representing the ABGR of each pixel in a sprite with item 0 representing the top left corner of the png.
     #
     # @param file_path [String] path to a sprite
-    # @return [Hash] returns a Hash with w, h, and pixels. The pixels key contains an array of hexadecimal values representing the ABGR of each pixel in a sprite with item 0 representing the top left corner of the png.
+    # @return [Typing::PixelsHash] returns a Hash with w, h, and pixels. The pixels key contains an array of hexadecimal values representing the ABGR of each pixel in a sprite with item 0 representing the top left corner of the png.
     def get_pixels file_path; end
 
     def dlopen file_path; end
