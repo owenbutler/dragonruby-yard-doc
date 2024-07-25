@@ -38,5 +38,24 @@ module GTK
 
     # @return [GTK::Geometry]
     attr_reader :geometry
+
+    # Hash containing metadata pulled from the files under the ./metadata directory.
+    #
+    # Each CVar has the following properties `value, name, description, type, locked`.
+    #
+    # example:
+    #
+    # ```
+    # def tick args
+    #   args.outputs.labels << {
+    #   x: 640,
+    #   y: 360,
+    #   text: args.cvars["game_metadata.version"].value.to_s
+    #   }
+    # end
+    # ```
+    #
+    # @return [Hash] Hash containing metadata pulled from the files under the ./metadata directory.
+    attr_reader :cvars
   end
 end
