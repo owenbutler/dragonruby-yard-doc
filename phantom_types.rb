@@ -1,4 +1,5 @@
-# :nodoc:
+# parent module holding all phantom types used only for typing arguments/return values
+# none of these classes/modules actually exist in the dragonruby runtime
 module Typing
   # phantom type denoting a point-like object
   module Point
