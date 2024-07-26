@@ -1,14 +1,14 @@
 # @type [GTK::Args]
-$args = Args.new
+$args = GTK::Args.new
 
 # @type [GTK::Inputs]
-$inputs = Inputs.new
+$inputs = GTK::Inputs.new
 
 # @type [GTK::Outputs]
-$outputs = Outputs.new
+$outputs = GTK::Outputs.new
 
-# @type [GTK::Gtk]
-$gtk = Gtk.new
+# @type [GTK::Runtime]
+$gtk = GTK::Runtime.new
 
-# @type [GTK::Geometry]
-$geometry = Geometry.new
+# @type [Module<GTK::Geometry>]
+$geometry = GTK::Geometry

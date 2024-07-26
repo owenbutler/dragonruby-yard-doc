@@ -1,6 +1,5 @@
 module GTK
-  class Gtk
-
+  class Runtime
     # @return [GTK::Args] args
     attr_reader :args
 
