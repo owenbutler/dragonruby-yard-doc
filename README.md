@@ -23,7 +23,7 @@ include:
 
 ### vim/neovim
 
-https://github.com/user-attachments/assets/9ae34338-f102-4971-acea-d50655366569
+https://github.com/user-attachments/assets/2e936f40-33f0-4c6e-b5a5-b58786454c35
 
 ### VSCode
 
