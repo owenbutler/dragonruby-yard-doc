@@ -27,5 +27,4 @@ https://github.com/user-attachments/assets/2e936f40-33f0-4c6e-b5a5-b58786454c35
 
 ### VSCode
 
-https://github.com/user-attachments/assets/537ab517-1ee8-42dc-aeda-3d2e8cdda61e
-
+https://github.com/user-attachments/assets/d5f33c46-fafd-4336-8f61-996292cbd9d1
