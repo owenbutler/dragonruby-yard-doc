@@ -30,13 +30,13 @@ module GTK
     # @return [Hash]
     attr_reader :audio
 
-    # @return [GTK::Easing]
+    # @return [Module<GTK::Easing>]
     attr_reader :easing
 
-    # @return [GTK::Layout]
+    # @return [Module<GTK::Layout>]
     attr_reader :layout
 
-    # @return [GTK::Geometry]
+    # @return [Module<GTK::Geometry>]
     attr_reader :geometry
 
     # Hash containing metadata pulled from the files under the ./metadata directory.
