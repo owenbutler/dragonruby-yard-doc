@@ -3,11 +3,9 @@ module GTK
     # @return [String, nil] name of the render target or `nil` if top-level 
     attr_accessor :target
 
-    ## TODO: write better docs
-    
     # @return [Integer] width of the outputs instance
     attr_accessor :width
-    
+
     # @return [Integer] height of the outputs instance
     attr_accessor :height
 
@@ -18,8 +16,10 @@ module GTK
     #                       or a color array of the format `[r, g, b]` or `[r, g, b, a]`
     attr_accessor :background_color
 
-    ## TODO: document `:clear_before_render`
-    
+    # Whether to clear the render target this frame, before any other operations are added to it.
+    #
+    # Defaults to True.
+    #
     # @return [Boolean]
     attr_accessor :clear_before_render
 
@@ -31,7 +31,7 @@ module GTK
     # @param name [String, Symbol]
     # @return [Outputs] render target named by `name`
     def render_target(name); end
-    
+
     # @param name [String, Symbol]
     # @return [Outputs] render target named by `name`
     def [](name); end

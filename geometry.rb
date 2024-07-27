@@ -25,11 +25,14 @@ module GTK
       # @return [Hash] a new rectangle with a scaled size.
       def scale_rect rect, ratio; end
 
-      # Given a Rectangle this function returns a new rectangle with a scaled size.
+      # The behavior is similar to scale_rect except that you can independently control the scale of each axis.
       #
-      # @todo work out how to do named options?
+      # The parameters are all named.
       #
-      # @param ratio [Float] the ratio by which to scale the rect. A ratio of 2 will double the dimensions of the rect while a ratio of 0.5 will halve its dimensions.
+      # @param percentage_x [Float] percentage to change the width (default value of 1.0)
+      # @param percentage_y [Float] percentage to change the height (default value of 1.0)
+      # @param anchor_x [Float] anchor repositioning of x (default value of 0.0)
+      # @param anchor_y [Float] anchor repositioning of y (default value of 0.0)
       # @return [Hash] a new rectangle with a scaled size.
       def scale_rect_extended opts; end
 
@@ -277,6 +280,18 @@ module GTK
       def find_collisions rects; end
 
       # todo
+      # Given a collection of rects, this function returns the next rect provided a move direction.
+      #
+      # The function is helpful for navigating controls using a keyboard or controller (like in on a menu screen).
+      #
+      # @param rect [Object]
+      # @param rects [Array] array of Rects
+      # @param left_right [Integer] A number that’s either -1, 0, or 1 indicating the x navigation direction.
+      # @param up_down [Integer] A number that’s either -1, 0, or 1 indicating the y navigation direction.
+      # @param directional_vector [Object] An object that responds to x, and y. The sign of these properties will be used to populate left_right, and up_down parameters.
+      # @param wrap_x [Boolean] Determines whether the navigation will wrap around if no navigation is found in the left_right direction. Defaulted to true.
+      # @param wrap_y [Boolean] Determines whether the navigation will wrap around if no navigation is found in the up_down direction. Defaulted to true.
+      # @param using [Proc] Optional lambda that can be passed in so the function knows which construct contains the properties x, y, w, h properties. If this parameter isn’t provided, then the source rect, rects objects are assumed to have x, y, w, h.
       def rect_navigate opts; end
 
       # Generates a quad tree from an array of rectangles. See #find_intersect_rect_quad_tree for usage.

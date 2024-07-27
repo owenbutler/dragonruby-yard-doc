@@ -157,7 +157,7 @@ module GTK
 
   class MousePoint
     include Typing::Point
-    
+
     # @return [Typing::Rect] hash containing the x, y position of the click, and a w, h that are always 0.
     attr_reader :point
 
