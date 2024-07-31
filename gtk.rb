@@ -441,5 +441,11 @@ module GTK
 
     # Will print caller alongside each puts, allowing you to locate/hunt down rogue puts.
     def add_caller_to_puts!; end
+
+    # alias for instance variable set
+    #
+    # @param variable [Symbol] the instance variable to set
+    # @param value [String] the value to set to
+    def ivar! variable, value; end
   end
 end
