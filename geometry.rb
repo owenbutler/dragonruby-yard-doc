@@ -279,7 +279,6 @@ module GTK
       # @return [Hash] collisions of rects within array.
       def find_collisions rects; end
 
-      # todo
       # Given a collection of rects, this function returns the next rect provided a move direction.
       #
       # The function is helpful for navigating controls using a keyboard or controller (like in on a menu screen).
@@ -299,6 +298,27 @@ module GTK
       # @param rects [Array] array of rects to form a quad_tree
       # @return [Object] quad_tree to be used with #find_intersect_rect_quad_tree and #find_all_intersect_rect_quad_tree
       def create_quad_tree rects; end
+
+      # Callback based many to many collision check.
+      #
+      # An implicit block is required for this function. The block will be called with each pair of intersecting rectangles.
+      #
+      # ```ruby
+      # rects_1 = [{ x: 0, y: 0, w: 100, h: 100 }]
+      # rects_2 = [{ x: 50, y: 50, w: 100, h: 100 }]
+      #
+      # args.geometry.each_intersect_rect(rects_1, rects_2) do |rect_1, rect_2|
+      #   \# do something with the intersecting rectangles
+      # end
+      # ```
+      #
+      # - See [Advanced Usage](https://docs.dragonruby.org/#/api/geometry?id=advanced-usage)
+      #
+      # @param rects_1 [Object] The first parameter can be an array or a single Hash (or an object that responds to x, y, w, h).
+      # @param rects_2 [Object] The second parameter can be an array or a single Hash (or an object that responds to x, y, w, h). The second parameter should be the larger of the two sets of rectangles.
+      # @param tolerance [Float] The third parameter is optional and is the tolerance for the intersection. The default value is 0.1.
+      # @param using [Proc,Symbol] An optional using: named parameter can be given to specify what function should be used to extract the x, y, w, and h properties from the objects in the first and second parameters.  If it is a Proc, it will be called with the object in the first and second parameters.
+      def each_intersect_rect rects1, rect2; end
     end
   end
 end
