@@ -447,5 +447,10 @@ module GTK
     # @param variable [Symbol] the instance variable to set
     # @param value [String] the value to set to
     def ivar! variable, value; end
+
+    # Invoking `$gtk.reboot`` will reset your game as if it were started for the first time.
+    #
+    # Any methods that were added to classes during hotload will be removed (leaving you with a pristine environment).
+    def reboot; end
   end
 end
