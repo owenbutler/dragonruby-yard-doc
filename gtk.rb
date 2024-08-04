@@ -442,10 +442,18 @@ module GTK
     # Will print caller alongside each puts, allowing you to locate/hunt down rogue puts.
     def add_caller_to_puts!; end
 
-    # alias for instance variable set
+    # alternative to `Object#instance_variable_get`
+    # this method exists on `Object`, but shall be left here for now, as not to clutter the api listing
     #
-    # @param variable [Symbol] the instance variable to set
-    # @param value [String] the value to set to
+    # @param variable [Symbol, String] the instance variable name, *shall not include the leading `@`*
+    # @return [Object] the value of the instance variable named by `variable`
+    def ivar variable; end
+    
+    # alternative to `Object#instance_variable_set`
+    # this method exists on `Object`, but shall be left here for now, as not to clutter the api listing
+    #
+    # @param variable [Symbol, String] the instance variable name, *shall not include the leading `@`*
+    # @param value [Object] the value the instance variable named by `variable` will be set to
     def ivar! variable, value; end
 
     # Invoking `$gtk.reboot`` will reset your game as if it were started for the first time.
