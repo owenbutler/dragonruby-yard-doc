@@ -54,7 +54,7 @@ $ git clone git@github.com:owenbutler/dragonruby-yard-doc.git
 
 ### A CRuby runtime
 
-Dragonruby itself does not require a ruby runtime to work. So, you might be wondering why we need another Ruby installed here? The answer is that the solargraph gem, which we will us as an LSP does need a ruby runtime.
+Dragonruby itself does not require a ruby runtime to work. So, you might be wondering why we need another Ruby installed here? The answer is that the solargraph gem, which we will us as an LSP, does need a ruby runtime.
 
 #### Windows
 
@@ -108,3 +108,14 @@ VSCode supports running solargraph through an [extension](https://marketplace.vi
 
 - Install solargraph LSP via [Mason](https://github.com/williamboman/mason.nvim)
 
+#### Emacs
+
+...
+
+#### Zed
+
+...
+
+#### Sublime Text
+
+...
