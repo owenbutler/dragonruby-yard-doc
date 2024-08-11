@@ -54,7 +54,7 @@ $ git clone git@github.com:owenbutler/dragonruby-yard-doc.git
 
 ### A CRuby runtime
 
-Dragonruby itself does not require a ruby runtime to work. So, you might be wondering why we need another Ruby installed here? The answer is that the solargraph gem, which we will us as an LSP, does need a ruby runtime.
+Dragonruby itself does not require a ruby runtime to work. So, you might be wondering why we need another Ruby installed here? The answer is that the solargraph gem, which we will use as an LSP, does need a ruby runtime.
 
 #### Windows
 
@@ -118,4 +118,38 @@ VSCode supports running solargraph through an [extension](https://marketplace.vi
 
 #### Sublime Text
 
-...
+[LSP for Sublime Text](https://lsp.sublimetext.io/) can be configured to run Solargraph.
+
+- Install the LSP package using the command palette (`Tools > Command Palette`):
+  - Enter the command `Package Control: Install Package`
+  - Choose the LSP package
+- Add Solargraph to the list of LSP clients in the package's settings (`Settings > Package Settings > LSP > Settings):
+
+```json
+{
+  "clients": {
+    "solargraph": {
+      "enabled": true,
+      "command": [
+        "solargraph", "stdio"
+      ],
+      "selector": "source.ruby",
+      "initializationOptions": {
+        "diagnostics": true
+      }
+    }
+  }
+}
+```
+
+The LSP package supports automatic formatting but doesn't enable it by default. If you'd like to use it:
+
+- Open a `.rb` file
+- Open the syntax-specific settings (`Settings > Settings - Syntax Specific`)
+- Enable format on save:
+
+```json
+{
+  "lsp_format_on_save": true
+}
+```
