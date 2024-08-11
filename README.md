@@ -123,7 +123,7 @@ VSCode supports running solargraph through an [extension](https://marketplace.vi
 - Install the LSP package using the command palette (`Tools > Command Palette`):
   - Enter the command `Package Control: Install Package`
   - Choose the LSP package
-- Add Solargraph to the list of LSP clients in the package's settings (`Settings > Package Settings > LSP > Settings):
+- Add Solargraph to the list of LSP clients in the package's settings (`Settings > Package Settings > LSP > Settings`):
 
 ```json
 {
