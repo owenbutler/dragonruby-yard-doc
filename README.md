@@ -58,7 +58,9 @@ Dragonruby itself does not require a ruby runtime to work. So, you might be wond
 
 #### Windows
 
-Download and run the latest ruby installer from [rubyinstaller.org](https://rubyinstaller.org/)
+Download and run the latest ruby installer from [rubyinstaller.org](https://rubyinstaller.org/). Choose the one that includes the DevKit.
+
+Or use your favorite package manager. For scoop, `scoop install ruby`, and follow it's instructions: `scoop install msys2` and `ridk install`. This will start the cli version of the rubyinstaller. Choose the option to install msys2 with the mingw development toolchain.
 
 #### Linux/Unix
 
