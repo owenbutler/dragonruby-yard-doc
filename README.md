@@ -52,6 +52,12 @@ $ cd ~/devel/games/
 $ git clone git@github.com:owenbutler/dragonruby-yard-doc.git
 ```
 
+If you prefer to use https for the clone, it'll look like:
+```sh
+$ cd ~/devel/games/
+$ git clone https://github.com/owenbutler/dragonruby-yard-doc.git
+```
+
 ### A CRuby runtime
 
 Dragonruby itself does not require a ruby runtime to work. So, you might be wondering why we need another Ruby installed here? The answer is that the solargraph gem, which we will use as an LSP, does need a ruby runtime.
@@ -64,11 +70,11 @@ Or use your favorite package manager. For scoop, `scoop install ruby`, and follo
 
 #### Linux/Unix
 
-Use the package management system of your distribution or third-party tools (asdf, rbenv or RVM).
+Use the package management system of your distribution or third-party tools (mise, asdf, rbenv or RVM).
 
 #### MacOS
 
-Use third-party tools (asdf, rbenv or RVM).
+Use third-party tools (mise, homebrew, asdf, rbenv or RVM).
 
 ### The solargraph gem
 
