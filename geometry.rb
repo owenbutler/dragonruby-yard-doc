@@ -319,6 +319,112 @@ module GTK
       # @param tolerance [Float] The third parameter is optional and is the tolerance for the intersection. The default value is 0.1.
       # @param using [Proc,Symbol] An optional using: named parameter can be given to specify what function should be used to extract the x, y, w, and h properties from the objects in the first and second parameters.  If it is a Proc, it will be called with the object in the first and second parameters.
       def each_intersect_rect rects1, rect2; end
+
+      # Given a rectangle (a something with x, y, w, h, and optionally anchor\_x, anchor\_y properties), this function returns an array of four lines representing the edges of the rectangle. The lines are ordered as: bottom, right, top, left.
+      #
+      # @param rect [Hash]
+      # @return [Array] array of four lines representing the edges of the rectangle. The lines are ordered as: bottom, right, top, left.
+      def rect_to_lines(rect)
+      end
+
+      # Given two points (each with x and y properties), this function returns a Hash(x:, y:, x2:, y2:) representing a line. The line starts at point p1 and ends at point p2.
+      #
+      # @param p1 [Object]
+      # @param p2 [Object]
+      # @return [Hash] Hash representing a line between p1 and p2.
+      def line_to_points(p1, p2)
+      end
+
+      # Given a rectangle, this function returns a new rectangle with adjusted dimensions while maintaining the center point.
+      #
+      # You can zoom using either ratio-based or pixel-based parameters, but not both.
+      #
+      # Returns Hash(x:, y:, w:, h:, center: Hash(x:, y:)).
+      #
+      # @param rect [Object]
+      # @param ratio [Numeric] uniform scaling ratio for both width and height
+      # @param w_ratio [Numeric] scaling ratio for width (overrides ratio for width)
+      # @param h_ratio [Numeric] scaling ratio for height (overrides ratio for height)
+      # @param px [Numeric] uniform pixel adjustment for both width and height
+      # @param w_px [Numeric] pixel adjustment for width (overrides px for width)
+      # @param h_px [Numeric] pixel adjustment for height (overrides px for height)
+      # @return [Hash]
+      def zoom_rect(rect, ratio, w_ratio, h_ratio, px, w_px, h_px)
+      end
+
+      # Given two rectangles and an interpolation step, this function returns a new rectangle that represents the linear interpolation between the from and to rectangles.
+      #
+      # Returns Hash(x:, y:, w:, h:, center: Hash(x:, y:)).
+      #
+      # @param from [Object] the starting rectangle
+      # @param to [Object] the ending rectangle
+      # @param step [Numeric] the interpolation step (typically a value between 0.0 and 1.0, where 0.0 returns the from rect and 1.0
+      # @param tolerance [Numeric] optional tolerance parameter passed to the underlying lerp function (default 0)
+      # @return [Hash]
+      def lerp_rect(from, to, step, tolerance)
+      end
+
+      # Generates basic 3D Perlin noise at the given coordinates.
+      #
+      # @param x [Numeric]
+      # @param y [Numeric]
+      # @param z [Numeric]
+      # @param x_wrap [Numeric] Wrapping values for tiling (use 0 for no wrapping)
+      # @param y_wrap [Numeric] Wrapping values for tiling (use 0 for no wrapping)
+      # @param z_wrap [Numeric] Wrapping values for tiling (use 0 for no wrapping)
+      # @return [Numeric] float value representing the noise at the given coordinates.
+      def perlin_noise(x, y, z, x_wrap, y_wrap, z_wrap)
+      end
+
+      # Generates 3D Perlin noise with a custom seed value for reproducible results.
+      #
+      # @param x [Numeric]
+      # @param y [Numeric]
+      # @param z [Numeric]
+      # @param x_wrap [Numeric] Wrapping values for tiling (use 0 for no wrapping)
+      # @param y_wrap [Numeric] Wrapping values for tiling (use 0 for no wrapping)
+      # @param z_wrap [Numeric] Wrapping values for tiling (use 0 for no wrapping)
+      # @param seed [Numeric] Integer seed value for reproducible noise generation
+      # @return [Numeric] float value representing the noise at the given coordinates.
+      def perlin_noise_seed(x, y, z, x_wrap, y_wrap, z_wrap, seed)
+      end
+
+      # Generates ridge noise, useful for creating mountain ridges and sharp terrain features.
+      #
+      # @param x [Numeric]
+      # @param y [Numeric]
+      # @param z [Numeric]
+      # @param lacunarity [Numeric] Controls the frequency increase per octave (typically 2.0)
+      # @param gain [Numeric] Controls the amplitude decrease per octave (typically 0.5)
+      # @param offset [Numeric] Ridge offset value (typically 1.0)
+      # @param octaves [Numeric] Number of noise layers to combine (typically 6)
+      # @return [Numeric] Returns a float value representing the ridge noise at the given coordinates.
+      def perlin_ridge_noise(x, y, z, lacunarity, gain, offset, octaves)
+      end
+
+      # Generates Fractional Brownian Motion (fBm) noise, useful for natural-looking textures like clouds, terrain, and wood grain.
+      #
+      # @param x [Numeric]
+      # @param y [Numeric]
+      # @param z [Numeric]
+      # @param lacunarity [Numeric] Controls the frequency increase per octave (typically 2.0)
+      # @param gain [Numeric] Controls the amplitude decrease per octave (typically 0.5)
+      # @param octaves [Numeric] Number of noise layers to combine (typically 6)
+      # @return [Numeric] Returns a float value representing the ridge noise at the given coordinates.
+      def perlin_fbm_noise(x, y, z, lacunarity, gain, offset, octaves)
+      end
+
+      # Generates turbulence noise using absolute values, useful for marble, fire, and liquid effects.
+      #
+      # @param x [Numeric]
+      # @param y [Numeric]
+      # @param z [Numeric]
+      # @param lacunarity [Numeric] Controls the frequency increase per octave (typically 2.0)
+      # @param gain [Numeric] Controls the amplitude decrease per octave (typically 0.5)
+      # @param octaves [Numeric] Number of noise layers to combine (typically 6)
+      # @return [Numeric] Returns a float value representing the ridge noise at the given coordinates.
+      def perlin_turbulence_noise(x, y, z, lacunarity, gain, offset, octaves)
+      end
     end
   end
 end

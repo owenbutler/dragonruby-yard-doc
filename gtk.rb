@@ -75,6 +75,14 @@ module GTK
     # @param font [String] path to a font file that the width and height will be based off of.
     def calcstringbox text, size_enum, font; end
 
+    # Returns the render width and render height as a tuple for a piece of text.
+    #
+    # @param text [String] the text you want to get the width and height of.
+    # @param size_enum [Integer]  number representing the render size for the text.
+    # @param font [String] path to a font file that the width and height will be based off of.
+    def get_string_rect text, size_enum, font; end
+
+
     # Call this function to exit your game.
     #   You will be given one additional tick if you need to perform any housekeeping before that game closes.
     def request_quit; end
@@ -277,6 +285,10 @@ module GTK
     # @param path [String]
     # @return [Array] Given a path to a sprite, this method returns the width and height of a sprite as a tuple.
     def calcspritebox path; end
+
+    # @param path [String]
+    # @return [Hash] Performs the same function as calcspritebox, but returns a Hash with keys x (always 0), y (always 0), w, h, and center (Hash with x, y).
+    def get_sprite_rect path; end
 
     # @return [Integer] Returns a float value representing the framerate of your game.
     #
